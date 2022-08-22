@@ -9,7 +9,13 @@ export default function App() {
       <h1>Weather App</h1>
       <footer>
         This project is created by
-        <a href="#">Marne du Preez</a> and is{" "}
+        <a
+          href="https://github.com/marne-dp/react-weather-app2"
+          target="_blank"
+        >
+          Marne du Preez
+        </a>{" "}
+        and is{" "}
         <a
           href="https://github.com/marne-dp/react-weather-app2"
           target="_blank"
