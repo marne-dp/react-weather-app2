@@ -25,7 +25,14 @@ export default function App() {
           >
             open-sourced on GitHub
           </a>{" "}
-          and hosted on Netlify.
+          and hosted on{" "}
+          <a
+            href="https://jade-bublanina-4ec264.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Netlify.
+          </a>
         </footer>
       </div>
     </div>
