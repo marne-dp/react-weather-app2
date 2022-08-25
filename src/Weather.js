@@ -1,10 +1,9 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate.js"
 import axios from "axios";
 import "./Weather.css";
-import { getDefaultNormalizer } from "@testing-library/react";
 
 export default function Weather(props) {
-  const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({ready: false});
   function handleResponse(response) {
     console.log(response.data);
@@ -14,7 +13,7 @@ export default function Weather(props) {
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/rain_light.png",
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      date: "",
+      date: new Date(response.data.dt * 1000) ,
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -45,7 +44,9 @@ export default function Weather(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
